@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": 
+    [
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "jlink",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/build/STM32G031K8_Debug.elf",
+            "name" : "JLink Remote",
+            "device": "STM32G031K8",
+            "interface": "swd",
+            "serialNumber": "",
+            "gdbPath": "${env:GCC_PATH}/arm-none-eabi-gdb",
+            "serverpath": "${env:JLINK_PATH}/JLinkGDBServerCLExe",
+            "runToMain": true,
+            "ipAddress": "192.168.224.1",
+            "svdFile": "STM32G031.svd"            
+        }        
+    ]
+}
