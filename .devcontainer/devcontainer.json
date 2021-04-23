@@ -18,10 +18,10 @@
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions":
 	[
-		"ms-vscode.cpptools",		// C/C++ tools
-		"marus25.cortex-debug",		// CORTEX DEBUGGING
-		"twxs.cmake",				// CMAKE
-		"ms-vscode.cmake-tools"		// CMAKE
+		"ms-vscode.cpptools@1.3.1",
+		"marus25.cortex-debug@0.3.12",
+		"twxs.cmake@0.0.17",
+		"ms-vscode.cmake-tools@1.7.1",
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

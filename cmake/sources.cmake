@@ -1,16 +1,11 @@
 ###################################################################
 # Sources and includes
 ###################################################################
+
+include(Core/core.cmake)
+
 # C files
 set(STM32CUBEMX_GENERATED_FILES
-        # Core
-        Core/Src/main.c
-        Core/Src/gpio.c 
-        Core/Src/usart.c 
-        Core/Src/stm32g0xx_it.c 
-        Core/Src/system_stm32g0xx.c
-        Core/Src/stm32g0xx_hal_msp.c
-        
         #Drivers
         Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_rcc.c 
         Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_dma.c 
@@ -35,12 +30,17 @@ set(STM32CUBEMX_GENERATED_FILES
         startup_stm32g031xx.s
 )
 
+# List all the direcotries which ha to be added
+set(SOURCE_FILE_LIST 
+        ${CORE_FILES}
+        ${STM32CUBEMX_GENERATED_FILES}
+   )
+
 # add source files to the output
-add_executable(${ELF_OUT} ${STM32CUBEMX_GENERATED_FILES})
+add_executable(${ELF_OUT} ${SOURCE_FILE_LIST})
 
 # include directories
 include_directories(
-        ${CMAKE_SOURCE_DIR}/Core/Inc
         ${CMAKE_SOURCE_DIR}/Drivers/CMSIS/Device/ST/STM32G0xx/Include
         ${CMAKE_SOURCE_DIR}/Drivers/CMSIS/Include
         ${CMAKE_SOURCE_DIR}/Drivers/STM32G0xx_HAL_Driver/Inc
