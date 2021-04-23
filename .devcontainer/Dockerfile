@@ -19,10 +19,10 @@ FROM ubuntu:20.04
 ARG BUILD_DATE
 ARG REVISON
 
-LABEL maintainer="Janos Ulbert <Janos_Ulbert@epam.com>" \
+LABEL maintainer="Janos Ulbert <ulbert86@gmail.com>" \
     org.opencontainers.image.title="STM32 Development environment" \
     org.opencontainers.image.description="This image is made for STM micro controller development" \
-    org.opencontainers.image.authors="Janos Ulbert <Janos_Ulbert@epam.com>" \
+    org.opencontainers.image.authors="Janos Ulbert <ulbert86@gmail.com>" \
     #org.opencontainers.image.vendor="" \
     #org.opencontainers.image.documentation="" \
     #org.opencontainers.image.licenses="MIT" \
@@ -78,14 +78,14 @@ ENV GCC_PATH="/opt/gcc-arm-none-eabi-10-2020-q4-major/bin"
 # --post-data="accept..." you need to accept the licence agreement at the SEGGER website to start the download
 # PS: The latest version of J-Link at Segger website don not have version number ... funny guys
 RUN wget --post-data="accept_license_agreement=accepted" -O \ 
-    /opt/JLink_Linux_V698_x86_64.deb \ 
-    https://www.segger.com/downloads/jlink/JLink_Linux_V698_x86_64.deb
+    /opt/JLink_Linux_V700a_x86_64.deb \ 
+    https://www.segger.com/downloads/jlink/JLink_Linux_V700a_x86_64.deb
 
 # install JLink tools
-RUN dpkg -i /opt/JLink_Linux_V698_x86_64.deb
+RUN dpkg -i /opt/JLink_Linux_V700a_x86_64.deb
 
 # remove the install file
-RUN rm /opt/JLink_Linux_V698_x86_64.deb
+RUN rm /opt/JLink_Linux_V700a_x86_64.deb
 
 # Add environment variable for the JLink path
 ENV JLINK_PATH="/opt/SEGGER/JLink"
