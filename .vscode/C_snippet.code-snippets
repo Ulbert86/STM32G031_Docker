@@ -110,7 +110,7 @@
       "* @file    $TM_FILENAME",
       "* @author  ${1:author}",
       "* @date    $CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE",
-      "* @brief   ${2:brief}*",
+      "* @brief   ${2:brief}",
       "* @note    ${3:note} ",
       "******************************************************************************/",
       "",
